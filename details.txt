@@ -1,0 +1,32 @@
+1. ContactFormHandler configuration :
+		i) In your php config file (php/php.ini), 
+			find(ctrl + F) = [mail function]
+			
+			SMTP=smtp.gmail.com
+			smtp_port=587
+			sendmail_from = change this to any of your gmail address
+
+
+		ii) In your sendmail config file (php/sendmail.ini), 
+			find(ctrl + F) = [sendmail]
+			
+			smtp_server=smtp.gmail.com
+			smtp_port=587
+			error_logfile=error.log
+			debug_logfile=debug.log
+			auth_username=change this to the email used in sendmail_from variable in php.ini
+			auth_password=your password
+
+2. In counter.php :
+		On line 12 in {setcookie('count',$val,time()+2)}
+		replace the last time()+2 to any other time in secs i.e time()+3600
+		
+
+3. For user's IP address:
+		i) Register at ipinfodb.com and get the API key.
+		ii) After registering, Update the API key in form_get.php (On Line 13) .
+		iii) For checking purpose replace the $ip in fetch_ip to any random ip bcz this wont work for localhost
+		iv) use MySQL_table.txt query for creating database (Heidi SQL)
+		v) configure db_config.php according to the Mysql database. 
+			
+	
